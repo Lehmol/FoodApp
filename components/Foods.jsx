@@ -34,10 +34,10 @@ const Foods = ({ searchTerm }) => {
                 {foods.length > 0 ? (
                     foods.map((food) => (
                         <Col key={food.idCategory || food.idMeal} md={3} sm={6} className="mb-4">
-                            <Card className="cursor-pointer" onClick={() => isSearching && navigate(`/food/${food.idMeal || food.idCategory}`)}>
+                            <Card onClick={() => isSearching && navigate(`/food/${food.idMeal || food.idCategory}`)}>
                                 <Card.Img variant="top" src={isSearching ? food.strMealThumb : food.strCategoryThumb} alt={isSearching ? food.strMeal : food.strCategory} />
                                     <Card.Body>
-                                        <Card.Title onClick={() => isSearching && navigate(`/food/${food.idMeal || food.idCategory}`)}>{isSearching ? food.strMeal : food.strCategory}</Card.Title>
+                                        <Card.Title style={{ cursor: 'pointer' }} onClick={() => isSearching && navigate(`/food/${food.idMeal || food.idCategory}`)}>{isSearching ? food.strMeal : food.strCategory}</Card.Title>
                                         <Card.Text>{isSearching ? (food.strInstructions || "No instructions to see").slice(0, 50) + "..." : (food.strCategoryDescription || "No description to see").slice(0, 50) + "..."}</Card.Text>
                                     </Card.Body>
                             </Card>
