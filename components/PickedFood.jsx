@@ -32,15 +32,15 @@ const PickedFood = () => {
     return ( 
         <Container className="mt-4">
             <Card>
-                <Card.Img variant="top" src={food.strMealThumb} alt="{food.strMeal}" style={{width: "250px"}} />
+                <Card.Img className="mx-auto d-block" variant="top" src={food.strMealThumb} alt="{food.strMeal}" style={{width: "250px"}} />
                 <Card.Body>
-                    <Card.Title>{food.strMeal}</Card.Title>
-                    <Card.Text>
+                    <Card.Title className="text-center">{food.strMeal}</Card.Title>
+                    <Card.Text className="text-center">
                         <strong>Instructions:</strong> {food.strInstructions}
                     </Card.Text>
-                    <Card.Text>
+                    <Card.Text className="text-center">
                         <strong>Ingredients:</strong>
-                        <ul>
+                        <ul className="list-unstyled">
                             {ingredients.map((item, index) => (
                                 <li key={index}>{item}</li>
                             ))}
