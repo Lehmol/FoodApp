@@ -44,7 +44,14 @@ const Foods = ({ searchTerm }) => {
                         </Col>
                     ))
                 ) : (
-                    <p>No foods found</p>
+                    <Container className="text-center mt-5">
+                        <lord-icon 
+                            src="https://cdn.lordicon.com/lltgvngb.json"
+                            trigger="loop"
+                            delay="500"
+                            style={{ width: "250px", height:"250px"}} />
+                        <p>Sorry, we don't have that kind of food...</p>
+                    </Container>
                 )}
             </Row>
         </Container>
