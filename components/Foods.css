@@ -1,0 +1,9 @@
+@import url("https://fonts.cdnfonts.com/css/amoera");
+
+.card-title {
+    cursor: none;
+    font-family: 'Amoera', sans-serif;
+}
+.card-text {
+    font-family: 'Amoera', sans-serif;
+}

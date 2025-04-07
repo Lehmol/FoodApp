@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import "./Foods.css"
 
 const Foods = ({ searchTerm }) => {
     const [foods, setFoods] = useState([]);
@@ -37,8 +38,8 @@ const Foods = ({ searchTerm }) => {
                             <Card onClick={() => isSearching && navigate(`/food/${food.idMeal || food.idCategory}`)}>
                                 <Card.Img variant="top" src={isSearching ? food.strMealThumb : food.strCategoryThumb} alt={isSearching ? food.strMeal : food.strCategory} />
                                     <Card.Body>
-                                        <Card.Title style={{ cursor: 'pointer' }} onClick={() => isSearching && navigate(`/food/${food.idMeal || food.idCategory}`)}>{isSearching ? food.strMeal : food.strCategory}</Card.Title>
-                                        <Card.Text>{isSearching ? (food.strInstructions || "No instructions to see").slice(0, 50) + "..." : (food.strCategoryDescription || "No description to see").slice(0, 50) + "..."}</Card.Text>
+                                        <Card.Title className="card-title" onClick={() => isSearching && navigate(`/food/${food.idMeal || food.idCategory}`)}>{isSearching ? food.strMeal : food.strCategory}</Card.Title>
+                                        <Card.Text className="card-text">{isSearching ? (food.strInstructions || "No instructions").slice(0, 50) + "..." : (food.strCategoryDescription || "No description").slice(0, 50) + "..."}</Card.Text>
                                     </Card.Body>
                             </Card>
                         </Col>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
-import { Container, Card } from "react-bootstrap";
+import { Container, Row, Col, Image } from "react-bootstrap";
+import "../src/index.css";
 
 const PickedFood = () => {
         const { id } = useParams();
@@ -30,24 +31,29 @@ const PickedFood = () => {
     
 
     return ( 
-        <Container className="mt-4">
-            <Card>
-                <Card.Img className="mx-auto d-block" variant="top" src={food.strMealThumb} alt="{food.strMeal}" style={{width: "250px"}} />
-                <Card.Body>
-                    <Card.Title className="text-center">{food.strMeal}</Card.Title>
-                    <Card.Text className="text-center">
-                        <strong>Instructions:</strong> {food.strInstructions}
-                    </Card.Text>
-                    <Card.Text className="text-center">
-                        <strong>Ingredients:</strong>
-                        <ul className="list-unstyled">
-                            {ingredients.map((item, index) => (
-                                <li key={index}>{item}</li>
-                            ))}
-                        </ul>
-                    </Card.Text>
-                </Card.Body>
-            </Card>
+        <Container>
+            <Row>
+                <Col>
+                    <Image className="food-image" src={food.strMealThumb}></Image>
+                </Col>
+                <Col className="first-column">
+                    <h2 className="mt-4">{food.strMeal}</h2>
+                    <hr></hr>
+                    <h4 style={{ fontWeight: "bold" }}>Ingredients:</h4>
+                    <ul>
+                        {ingredients.map((item, index) => (
+                            <li key={index}>{item}</li>
+                        ))}
+                    </ul>
+                </Col>
+            </Row>
+            <Row>
+                <Col className="second-column">
+                    <h4 className="mt-3">Instructions:</h4>
+                    <hr></hr>
+                    <p>{food.strInstructions}</p>
+                </Col>
+            </Row>
         </Container>
     );
 
