@@ -7,3 +7,11 @@
 .card-text {
     font-family: 'Amoera', sans-serif;
 }
+.food-card {
+    cursor: pointer;
+}
+
+.food-card:hover {
+    transform: scale(1.05);
+    transition: transform ease .5s;
+}

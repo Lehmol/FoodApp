@@ -51,7 +51,9 @@ const PickedFood = () => {
                 <Col className="second-column">
                     <h4 className="mt-3">Instructions:</h4>
                     <hr></hr>
-                    <p>{food.strInstructions}</p>
+                    {food.strInstructions.split('\r\n').map((str, i) => (
+                        <p key={i}>{str}</p>
+                    ))}
                 </Col>
             </Row>
         </Container>

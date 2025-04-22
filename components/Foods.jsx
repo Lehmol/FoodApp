@@ -35,7 +35,7 @@ const Foods = ({ searchTerm }) => {
                 {foods.length > 0 ? (
                     foods.map((food) => (
                         <Col key={food.idCategory || food.idMeal} md={3} sm={6} className="mb-4">
-                            <Card onClick={() => isSearching && navigate(`/food/${food.idMeal || food.idCategory}`)}>
+                            <Card className={!food.idCategory ? 'food-card' : ''} onClick={() => isSearching && navigate(`/food/${food.idMeal || food.idCategory}`)}>
                                 <Card.Img variant="top" src={isSearching ? food.strMealThumb : food.strCategoryThumb} alt={isSearching ? food.strMeal : food.strCategory} />
                                     <Card.Body>
                                         <Card.Title className="card-title" onClick={() => isSearching && navigate(`/food/${food.idMeal || food.idCategory}`)}>{isSearching ? food.strMeal : food.strCategory}</Card.Title>
